@@ -10,7 +10,7 @@ public class ex_9_ch_1_area_and_perimeter_of_a_rectangle {
         double width= 4.5;
         double height= 7.9;
         double area = width * height;
-        System.out.println("width = 4.5 height = 7.9");
+        System.out.println("width = " + width + " height = " + height);
         System.out.println("area = " + area);
     }
 }
