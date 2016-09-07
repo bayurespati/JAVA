@@ -18,6 +18,7 @@ public class ex_20_ch_2_calculate_interest {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter balance and interest rate (e.g., 3 for 3%) : ");
+
         double balance = input.nextDouble();
         double rate = input.nextDouble();
 
