@@ -36,8 +36,6 @@ public class ex_13_ch_2_Financial_application_compound_velue {
 
 
 
-
-
         System.out.print("After sixth month, the account Value is : " + saving);
     }
 }
