@@ -17,9 +17,9 @@ public class ex_23_ch_3_point_in_a_rectangel {
         double y2 = 0;
 
         double distance = Math.pow( Math.pow((x2-x1), 2)+ Math.pow((y2-y1), 2), 0.5 );
-        boolean valid = (distance <= 5 && y1 <= 2.5 && y1 >= -2.5);
+        boolean valid = (distance <= 4.5 && y1 <= 2.5 && y1 >= -2.5);
 
-
+        System.out.println(" "+distance);
         if(valid)
             System.out.print("Point ("+x1+","+y1+") is in the circle");
         else
