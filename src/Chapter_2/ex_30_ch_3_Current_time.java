@@ -25,6 +25,9 @@ public class ex_30_ch_3_Current_time {
 
         if(hour > 11){
             double hourPm = hour % 12;
+            if(hourPm < 1){
+                hourPm = 12;
+            }
             System.out.print("Current time is   "+(int)+hourPm+" : "+currentMinutes+" : "+currentSecond+ " PM");
         }
         else
