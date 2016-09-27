@@ -21,7 +21,7 @@ public class eg_11_ch_5_dec_2_hex {
                     : (char)(hexValue - 10 + 'A');
 
             hex = hexDigit + hex;
-            decimal = decimal /16;
+            decimal = decimal / 16;
         }
         System.out.println("The hex number is :"+hex);
     }
