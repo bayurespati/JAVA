@@ -22,12 +22,12 @@ public class ex_47_ch_5_business_check_isbn_13 {
         else
             {
                 for(int i = 1; i <= 12; i++){
-                    int z = digit.charAt(b) - 48;
-                    if(i % 2 == 0 && i !=1){
+                     int z = digit.charAt(b) - 48;
+                     if(i % 2 == 0 && i !=1){
                       a += 3 * z;
                      }
                     else
-                        a += z;
+                    a += z;
                      b++;
                 }
                 System.out.print("The ISBN number is : " + digit);
