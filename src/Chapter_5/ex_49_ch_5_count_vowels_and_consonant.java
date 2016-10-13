@@ -13,7 +13,7 @@ public class ex_49_ch_5_count_vowels_and_consonant {
         String string = input.nextLine();
 
         String vocal = "aiueoAIUEO";
-        String consonant = "bcdfghjklmnpqrsBCDFGHJKLMNPQRS";
+        String consonant = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
 
         int vowelCount = 0;
         int consonantCount = 0;
