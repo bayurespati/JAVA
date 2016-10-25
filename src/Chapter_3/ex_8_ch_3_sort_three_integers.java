@@ -16,22 +16,26 @@ public class ex_8_ch_3_sort_three_integers {
         int number3 = input.nextInt();
 
 
-        if(number1>number2){
+        if(number1 > number2){
             int tempt = number1;
             number1 = number2;
             number2 = tempt;
         }
-        if(number1>number3){
+        if(number1 > number3){
             int temp = number1;
             number1 = number3;
             number3 = temp;
         }
-        if(number2>number3){
+        if(number2 > number3){
             int temp = number2;
             number2 = number3;
             number3 = temp;
         }
-
+        if(number1 > number2){
+            int tempt = number1;
+            number1 = number2;
+            number2 = tempt;
+        }
 
         System.out.println(" the number is : "+number1+" "+number2+" "+number3);
     }
