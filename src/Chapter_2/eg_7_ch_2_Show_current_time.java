@@ -13,6 +13,6 @@ public class eg_7_ch_2_Show_current_time {
         long totalHour = totalMinutes / 60;
         long currentHour = totalHour % 24;
 
-        System.out.print("Current time is   "+currentHour+" : "+currentMinutes+" : "+currentSecond+ " GMT");
+        System.out.print("Current time is  "+currentHour+" : "+currentMinutes+" : "+currentSecond+ " GMT");
     }
 }
