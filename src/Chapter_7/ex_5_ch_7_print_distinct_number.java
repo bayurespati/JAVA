@@ -13,58 +13,7 @@ public class ex_5_ch_7_print_distinct_number {
 
         int totalDistinctNumber = getTotalDN(distinctNumber);
 
-        printTest(distinctNumber,totalDistinctNumber);
-
-    }
-
-    public static void printTest(int[] number, int total){
-
-        System.out.println("The number of distinct is : "+total);
-        System.out.print("The distinct number are : ");
-
-        for(int i = 0; i < number.length; i++){
-            if(number[i] != 0){
-                System.out.print(" "+number[i]);
-            }
-        }
-    }
-
-    public static int getTotalDN(int[] distinctNumber){
-        int total = 0;
-
-        for(int i = 0; i < distinctNumber.length; i++){
-            if(distinctNumber[i] != 0){
-                total++;
-            }
-        }
-
-        return total;
-    }
-
-    public static int[] getDistinctNumber(int[] number){
-        int[] distinctNumber = new int [10];
-
-
-        for(int i = 0; i < number.length; i++ ){
-            distinctNumber[i] = getExistNumber(distinctNumber,number,i);
-        }
-        return distinctNumber;
-    }
-
-    public static int getExistNumber (int[] distinctNumber, int[] number,int i){
-
-        int temp = 0;
-
-        for(int k = 0; k <= i; k++){
-            if(distinctNumber[k] == number[i]){
-                temp = 0;
-                break;
-            }
-            else
-                temp = number[i];
-        }
-
-        return temp;
+        print(distinctNumber,totalDistinctNumber);
 
     }
 
@@ -79,5 +28,53 @@ public class ex_5_ch_7_print_distinct_number {
         }
 
         return number;
+    }
+
+    public static int[] getDistinctNumber(int[] number){
+        int[] distinctNumber = new int [number.length];
+        int distinctIN = 0;
+        for(int i = 0; i < number.length; i++){
+            if(!isNumberExist(distinctNumber,number[i])){
+                distinctNumber[distinctIN] = number[i];
+                distinctIN++;
+            }
+        }
+        return distinctNumber;
+    }
+
+    public static boolean isNumberExist(int[] arrayOfNum, int num) {
+
+        for(int i = 0; i < arrayOfNum.length; i++){
+            if(arrayOfNum[i] == num){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int getTotalDN(int[] distinctNumber){
+        int total = 0;
+
+        for(int i = 0; i < distinctNumber.length; i++){
+            if(distinctNumber[i] == 0){
+                break;
+            }
+            total++;
+        }
+
+        return total;
+    }
+
+    public static void print(int[] number, int total){
+
+        System.out.println("The number of distinct is : "+total);
+        System.out.print("The distinct number are : ");
+
+        for(int i = 0; i < number.length; i++){
+            if(number[i] == 0){
+                break;
+            }
+            System.out.print(" "+number[i]);
+        }
     }
 }
