@@ -44,23 +44,28 @@ public class ex_5_ch_7_print_distinct_number {
     public static int[] getDistinctNumber(int[] number){
         int[] distinctNumber = new int [10];
 
-        int temp = 0;
 
         for(int i = 0; i < number.length; i++ ){
-
-
-            for(int k = 0; k <= i; k++){
-                if(distinctNumber[k] == number[i]){
-                    temp = 0;
-                    break;
-                }
-                else
-                    temp = number[i];
-            }
-
-            distinctNumber[i] = temp;
+            distinctNumber[i] = getExistNumber(distinctNumber,number,i);
         }
         return distinctNumber;
+    }
+
+    public static int getExistNumber (int[] distinctNumber, int[] number,int i){
+
+        int temp = 0;
+
+        for(int k = 0; k <= i; k++){
+            if(distinctNumber[k] == number[i]){
+                temp = 0;
+                break;
+            }
+            else
+                temp = number[i];
+        }
+
+        return temp;
+
     }
 
     public static int[] getNumber(){
