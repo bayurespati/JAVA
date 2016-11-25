@@ -32,9 +32,6 @@ public class ex_13_ch_7_random_number_chooser {
 
 
     public static int getRandom(int... numberExcept){
-        int[] number = getNumber();
-
-
         int randomIndex = randomNumber();
 
         while(!checkNumber(numberExcept,randomIndex)){
@@ -42,18 +39,8 @@ public class ex_13_ch_7_random_number_chooser {
             randomIndex = randomNumber();
         }
 
-        return number[randomIndex];
+        return randomIndex;
 
-    }
-
-
-    public static int[] getNumber(){
-        int[] numberOfArray = new int [55];
-
-        for(int i = 1; i < numberOfArray.length; i++){
-            numberOfArray[i] = i;
-        }
-        return numberOfArray;
     }
 
     public static int randomNumber(){
