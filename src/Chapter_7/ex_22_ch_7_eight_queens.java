@@ -6,7 +6,7 @@ package Chapter_7;
 public class ex_22_ch_7_eight_queens {
     public static void main(String[] args) {
         int[] exceptList = setExceptList();
-        int[] chessBord = new int[64];
+        int[] chessBord = setChessBord(exceptList.length);
         int[] queen= new int[8];
 
         printChessBord(chessBord,queen,exceptList);
@@ -21,78 +21,49 @@ public class ex_22_ch_7_eight_queens {
         return exceptionList;
     }
 
-    public static void printChessBord(int[] chessBord,int[] queen,int[] exceptionList){
-        int max = 8;
-        int min = max - 8;
-        int countIndex = 0;
+    public static int[] setChessBord(int length){
+        int[] setChessBord = new int [length];
+        for(int i = 0; i < setChessBord.length; i++){
+            setChessBord[i] = -2;
+        }
+        return setChessBord;
+    }
 
-        int randomQueen = (int) (Math.random() * queen.length);
+    public static void printChessBord(int[] chessBord,int[] queen,int[] exceptionList){
+        int max = queen.length;
+        int min = max - queen.length;
+        int countIndex;
 
         for(int i = 0; i < 8; i++){
+
+            int randomQueen = (int) (min + Math.random() * queen.length);
             countIndex = getIndex(exceptionList);
 
             while (!checkQueen(exceptionList,randomQueen)){
                 randomQueen = (int) (min + Math.random() * queen.length);
             }
+
             chessBord[randomQueen] = randomQueen;
-
-            System.out.println(randomQueen);
-
             queen[i] = randomQueen;
+
             exceptionList[countIndex] = randomQueen;
             countIndex++;
-
             getExceptionList(exceptionList,randomQueen,max,min,countIndex,chessBord);
-            printChessBord(chessBord);
 
-            min = max;
-            max = min + 8;
-
-            int checkMax = chessBord.length;
-            int checkMin = checkMax - 8;
-
-            while (!checkRow(chessBord,checkMax,checkMin)){
-                refineQueen(chessBord,exceptionList,queen,i,max);
+            while (!checkRow(chessBord)){
+                refineQueen(chessBord,exceptionList,queen,i);
                 i--;
                 max -=8;
                 min -=8;
             }
 
+            min = max;
+            max = min + 8;
+
+            System.out.println(randomQueen);
+            printChessBord(chessBord);
         }
     }
-
-    public static void refineQueen(int[] chessBord,int[] exceptionList,int[] queen, int i, int max){
-        for(int k = exceptionList.length-1; k > 0; k--){
-            if(exceptionList[k] == queen[i]){
-                break;
-            }
-            if(exceptionList[k] != -1){
-                chessBord[exceptionList[k]] = 0;
-            }
-            exceptionList[k] = -1;
-        }
-        chessBord[queen[i]] = -1;
-        queen[i] = 0;
-    }
-
-    public static boolean checkRow(int[] chessBord,int max,int min){
-        int count = 0;
-        while (max > 0){
-            for(int i = min; i < max; i++){
-                if(chessBord[i] == -1){
-                    count++;
-                }
-            }
-            if(count == 8){
-                break;
-            }
-            count = 0;
-            max = min;
-            min = max - 8;
-        }
-        return (count < 8);
-    }
-
 
     public static int getIndex(int[] exceptionList){
         int index = 0;
@@ -104,26 +75,13 @@ public class ex_22_ch_7_eight_queens {
         return index;
     }
 
-    public static void printChessBord(int[] chessBord){
-        int count = 0;
-
-        for(int k = 0; k < chessBord.length; k++){
-            System.out.print("|");
-            if(chessBord[k] > 0){
-                System.out.print("Q");
-            }
-            else if(chessBord[k] == -1){
-                System.out.print("*");
-            }
-            else
-                System.out.print(" ");
-
-            count++;
-
-            if (count % 8 == 0) {
-                System.out.println("|");
+    public static boolean checkQueen(int[] exceptionList,int randomQueen){
+        for(int i = 0 ; i < exceptionList.length; i++){
+            if(exceptionList[i] == randomQueen){
+                return false;
             }
         }
+        return true;
     }
 
     public static void getExceptionList(int[] exceptionList, int queen, int max, int min, int countIndex,int[] chessBord){
@@ -183,26 +141,64 @@ public class ex_22_ch_7_eight_queens {
 
     }
 
-    public static boolean checkQueen(int[] exceptionList,int randomQueen){
-        for(int i = 0 ; i < exceptionList.length; i++){
-            if(exceptionList[i] == randomQueen){
-                return false;
+    public static void refineQueen(int[] chessBord,int[] exceptionList,int[] queen, int i){
+        for(int k = exceptionList.length-1; k > 0; k--){
+            if(exceptionList[k] == queen[i]){
+                break;
             }
+            if(exceptionList[k] != -1){
+                chessBord[exceptionList[k]] = -2;
+            }
+            exceptionList[k] = -1;
         }
-
-        return true;
+        chessBord[queen[i]] = -1;
+        queen[i] = 0;
     }
 
-    public static void printTest(int[] test){
-        int count = 1;
-        for(int i = 0; i < test.length; i++){
-            System.out.print(" "+test[i]);
+    public static boolean checkRow(int[] chessBord){
 
-            if(count % 8 == 0){
-                System.out.println();
+        int max = chessBord.length;
+        int min = max - 8;
+        int count = 0;
+        while (max > 0){
+            for(int i = min; i < max; i++){
+                if(chessBord[i] == -1){
+                    count++;
+                }
             }
+            if(count == 8){
+                break;
+            }
+            count = 0;
+            max = min;
+            min = max - 8;
+        }
+        return (count < 8);
+    }
+
+    public static void printChessBord(int[] chessBord){
+        int count = 0;
+
+        for(int k = 0; k < chessBord.length; k++){
+            System.out.print("|");
+            if(chessBord[k] >= 0){
+                System.out.print("Q");
+            }
+            else if(chessBord[k] == -1){
+                System.out.print("*");
+            }
+            else
+                System.out.print(" ");
+
             count++;
+
+            if (count % 8 == 0) {
+                System.out.println("|");
+            }
         }
         System.out.println();
     }
+
+
+
 }
