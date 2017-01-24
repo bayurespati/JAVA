@@ -36,11 +36,13 @@ public class ex_7_ch_8_points_nearest_to_each_other {
         double[][] nearestPoint = new double[2][3];
         int p1 = 0, p2 = 1;
 
-        double shortestDistance = getDistance(points[p1][0], points[p1][1],points[p1][2] , points[p2][0], points[p2][1],points[p2][2]);
+        double shortestDistance = getDistance(
+                points[p1][0], points[p1][1],points[p1][2] , points[p2][0], points[p2][1],points[p2][2]);
 
         for (int i = 1; i < points.length; i++){
             for (int j = i + 1; j < points.length; j++) {
-                double distance = getDistance(points[i][0], points[i][1],points[i][2] , points[j][0], points[j][1],points[j][2]);
+                double distance = getDistance(
+                        points[i][0], points[i][1],points[i][2] , points[j][0], points[j][1],points[j][2]);
 
                 if(shortestDistance > distance){
                     p1 = i;
@@ -60,11 +62,7 @@ public class ex_7_ch_8_points_nearest_to_each_other {
     }
 
     public static double getDistance(double x1, double y1, double z1, double x2, double y2, double z2){
-        double fuck = Math.sqrt( (Math.pow((x2 - x1),2)) + (Math.pow((y2-y1),2))  + (Math.pow((z2 - z1),2)) );
-
-        System.out.println(fuck);
-
-        return fuck;
+        return Math.sqrt( (Math.pow((x2 - x1),2)) + (Math.pow((y2-y1),2))  + (Math.pow((z2 - z1),2)) );
     }
 
     public static void printNearestPoint(double[][] nearestPoint){
