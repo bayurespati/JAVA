@@ -10,7 +10,7 @@ public class ex_16_ch_8_sort_two_dimensional_array {
         int[][] number = getNumber();
 
         sortArrayForRow0(number);
-        sortArrayForRow1(number);
+//        sortArrayForRow1(number);
 
         print(number);
     }
@@ -42,31 +42,12 @@ public class ex_16_ch_8_sort_two_dimensional_array {
                     currentMin1 = number[j][1];
                     currentMinIndex = j;
                 }
-            }
-            if (currentMinIndex != i){
-                number[currentMinIndex][0] = number[i][0];
-                number[i][0] = currentMin0;
-
-                number[currentMinIndex][1] = number[i][1];
-                number[i][1] = currentMin1;
-            }
-        }
-    }
-
-    public static void sortArrayForRow1(int[][] number){
-
-        for (int i = 0; i <number.length ; i++) {
-
-            int currentMin0 = number[i][0];
-            int currentMin1 = number[i][1];
-            int currentMinIndex = i;
-
-            for (int j = i + 1; j < number.length; j++) {
-                if (currentMin0 == number[j][0] && currentMin1 > number[j][1]) {
-                    currentMin0 = number[j][0];
-                    currentMin1 = number[j][1];
-                    currentMinIndex = j;
+                else if (currentMin0 == number[j][0] && currentMin1 > number[j][1]) {
+                        currentMin0 = number[j][0];
+                        currentMin1 = number[j][1];
+                        currentMinIndex = j;
                 }
+
             }
             if (currentMinIndex != i){
                 number[currentMinIndex][0] = number[i][0];
@@ -76,8 +57,33 @@ public class ex_16_ch_8_sort_two_dimensional_array {
                 number[i][1] = currentMin1;
             }
         }
-
     }
+//
+//    public static void sortArrayForRow1(int[][] number){
+//
+//        for (int i = 0; i <number.length ; i++) {
+//
+//            int currentMin0 = number[i][0];
+//            int currentMin1 = number[i][1];
+//            int currentMinIndex = i;
+//
+//            for (int j = i + 1; j < number.length; j++) {
+//                if (currentMin0 == number[j][0] && currentMin1 > number[j][1]) {
+//                    currentMin0 = number[j][0];
+//                    currentMin1 = number[j][1];
+//                    currentMinIndex = j;
+//                }
+//            }
+//            if (currentMinIndex != i){
+//                number[currentMinIndex][0] = number[i][0];
+//                number[i][0] = currentMin0;
+//
+//                number[currentMinIndex][1] = number[i][1];
+//                number[i][1] = currentMin1;
+//            }
+//        }
+//
+//    }
 
     public static void print(int[][] number){
         System.out.println("The sort Input is : ");
