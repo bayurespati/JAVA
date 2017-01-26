@@ -41,6 +41,9 @@ public class ex_19_ch_7_sorted {
     public static boolean isSorted(int[] list){
 
         for(int i = 0; i < list.length; i++){
+            if(i == list.length-1){
+                break;
+            }
             if(list[i] > list[i+1]){
                 return false;
             }
