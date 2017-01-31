@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by bnamora on 1/26/17.
  */
-public class ex_19_ch_20_pattern_recognition_four_consecutive_equal_number {
+public class ex_19_ch_8_pattern_recognition_four_consecutive_equal_number {
     public static void main(String[] args) {
         int[] rowAndCol = getLengthMatrix();
         int[][] matrix = getMatrix(rowAndCol);
