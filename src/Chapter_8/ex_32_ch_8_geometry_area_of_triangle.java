@@ -35,10 +35,14 @@ public class ex_32_ch_8_geometry_area_of_triangle {
         double[] side = new double[3];
         double checkSameLine = (pointTriangle[0][0] * pointTriangle[1][1]) - (pointTriangle[0][1] * pointTriangle[1][0]);
 
-        side[0] = Math.pow(Math.pow((pointTriangle[1][0] - pointTriangle[0][0]), 2) + Math.pow((pointTriangle[1][1] - pointTriangle[0][1]), 2), 0.5);
-        side[1] = Math.pow(Math.pow((pointTriangle[2][0] - pointTriangle[0][0]), 2) + Math.pow((pointTriangle[2][1] - pointTriangle[0][1]), 2), 0.5);
-        side[2] = Math.pow(Math.pow((pointTriangle[1][0] - pointTriangle[2][0]), 2) + Math.pow((pointTriangle[1][1] - pointTriangle[2][1]), 2), 0.5);
 
+        for(int row = 0; row < pointTriangle.length; row++){
+            int nextRow = (row + 1) % 3;
+            for(int col = 0; col < pointTriangle[0].length; col++){
+                side[row] += Math.pow(pointTriangle[row][col] - pointTriangle[nextRow][col], 2);
+            }
+            side[row] = Math.pow(side[row],0.5);
+        }
 
         if (checkSameLine == 0) {
             return 0;
