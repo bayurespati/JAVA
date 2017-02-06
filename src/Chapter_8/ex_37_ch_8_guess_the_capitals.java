@@ -8,16 +8,16 @@ import java.util.Scanner;
 public class ex_37_ch_8_guess_the_capitals {
     public static void main(String[] args) {
         String[][] countryAndCapital = {
-                {"Indonesia","jakArta"},
-                {"Thailand","bangkok"},
-                {"Philippines","mAnila"},
-                {"Cambodia","phnom Penh"},
-                {"Malaysia","kualA lumpur"},
-                {"Laos","vientIane"},
-                {"Myanmar","naypyidaw"},
+                {"Indonesia","Jakarta"},
+                {"Thailand","Bangkok"},
+                {"Philippines","Manila"},
+                {"Cambodia","Phnom Penh"},
+                {"Malaysia","Kuala lumpur"},
+                {"Laos","Vientiane"},
+                {"Myanmar","Naypyidaw"},
                 {"Singapore","Singapore"},
                 {"Vietnam","Hanoi"},
-                {"Brunei","bandar sri begawan"}
+                {"Brunei","Bandar Sri Begawan"}
         };
 
         int correctAnswer = getCorrectAnswer(countryAndCapital);
