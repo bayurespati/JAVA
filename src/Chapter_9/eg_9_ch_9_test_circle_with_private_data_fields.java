@@ -5,7 +5,7 @@ package Chapter_9;
  */
 public class eg_9_ch_9_test_circle_with_private_data_fields {
     public static void main(String[] args) {
-        eg_8_ch_9_circle_with_private_data_fields myCircle = new eg_8_ch_9_circle_with_private_data_fields();
+        eg_8_ch_9_circle_with_private_data_fields myCircle = new eg_8_ch_9_circle_with_private_data_fields(5.0);
 
         System.out.println("The area of the circle of radius "+myCircle.getRadius()+" is "+myCircle.getArea());
 
