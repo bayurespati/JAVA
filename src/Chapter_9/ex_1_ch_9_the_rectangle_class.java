@@ -1,5 +1,7 @@
 package Chapter_9;
 
+import Chapter_9.libaray_class_chapter_9.Rectangle;
+
 /**
  * Created by bnamora on 2/9/17.
  */
@@ -12,46 +14,4 @@ public class ex_1_ch_9_the_rectangle_class {
         System.out.println("Rectangle2 have Width : "+rectangle2.getWidth()+" Length : "+rectangle2.getLength()+" Area : "+rectangle2.getArea()
                 +" Perimeter : "+rectangle2.getPerimeter());
     }
-}
-
-class Rectangle{
-    private double width;
-    private double length;
-
-    public double getWidth() {
-        return width;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
-    }
-
-
-    public Rectangle(){
-        width = 1;
-        length = 1;
-    }
-
-    public Rectangle(double width, double length){
-        this.width = width;
-        this.length = length;
-    }
-
-    double getArea(){
-        return width * length;
-    }
-
-    double getPerimeter(){
-        return (width * 2) + (length * 2);
-    }
-
-
 }
