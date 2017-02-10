@@ -22,6 +22,6 @@ public class ex_36_ch_6_area_of_regular_polygon {
     }
 
     public static double computeAreaOfPolygon(int numberOfSide, double side){
-        return  (numberOfSide * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / 5));
+        return  (numberOfSide * Math.pow(side, 2)) / (4 * Math.tan(Math.PI / numberOfSide));
     }
 }
