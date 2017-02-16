@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by bnamora on 2/16/17.
  */
-public class ex_5_ch_10_displaying_the_prime_number {
+public class ex_5_ch_10_displaying_the_prime_factor {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         StackOfInteger stack = new StackOfInteger();
