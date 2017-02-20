@@ -9,6 +9,7 @@ public class MyRectangle2D {
     private double width;
     private double height;
 
+
     public MyRectangle2D(){
         x = 0;
         y = 0;
@@ -21,6 +22,9 @@ public class MyRectangle2D {
         this.y = y;
         this.width = width;
         this.height = height;
+    }
+
+    public MyRectangle2D(double[][] point){
     }
 
     public double getX(){
@@ -80,5 +84,59 @@ public class MyRectangle2D {
 
     private double getDistance(MyRectangle2D r){
         return Math.pow(Math.pow((r.getX() - x), 2) + Math.pow((r.getY() - y), 2), 0.5);
+    }
+
+    public static MyRectangle2D getRectangle(double[][] point){
+        double rightMostX = getRightMostX(point);
+        double leftMostX = getLeftMostX(point);
+        double highestY = getHighestY(point);
+        double lowestY = getLowestY(point);
+        double centerX = (rightMostX + leftMostX) / 2;
+        double centerY = (highestY + lowestY) / 2;
+        double width = rightMostX - leftMostX;
+        double height = highestY - lowestY;
+
+        MyRectangle2D rectangle2D = new MyRectangle2D(centerX,centerY,width,height);
+        return rectangle2D;
+    }
+
+    private static double getRightMostX(double[][] point){
+        double rightMostX = point[0][0];
+        for(int i = 1; i < point.length; i++){
+            if(point[i][0] > rightMostX){
+                rightMostX = point[i][0];
+            }
+        }
+        return rightMostX;
+    }
+
+    private static double getLeftMostX(double[][] point){
+        double leftMostX = point[0][0];
+        for(int i = 1; i < point.length; i++){
+            if(point[i][0] < leftMostX){
+                leftMostX = point[i][0];
+            }
+        }
+        return leftMostX;
+    }
+
+    private static double getHighestY(double[][] point){
+        double highestY = point[0][1];
+        for(int i = 1; i < point.length; i++){
+            if(point[i][1] > highestY){
+                highestY = point[i][1];
+            }
+        }
+        return highestY;
+    }
+
+    private static double getLowestY(double[][] point){
+        double lowestY = point[0][1];
+        for(int i = 1; i < point.length; i++){
+            if(point[i][1] < lowestY){
+                lowestY = point[i][1];
+            }
+        }
+        return lowestY;
     }
 }
