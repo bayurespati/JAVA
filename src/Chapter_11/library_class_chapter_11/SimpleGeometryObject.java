@@ -1,4 +1,4 @@
-package Chapter_11.test.library_class_chapter_10;
+package Chapter_11.library_class_chapter_11;
 
 /**
  * Created by bnamora on 2/23/17.

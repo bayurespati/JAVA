@@ -1,10 +1,10 @@
-package Chapter_11.test.library_class_chapter_10;
+package Chapter_11.library_class_chapter_11;
 
 /**
  * Created by bnamora on 2/23/17.
  */
 public class CircleFromSimpleGeometricObject
-        extends SimpleGeometryObject{
+        extends SimpleGeometryObject {
     private double radius;
 
     public CircleFromSimpleGeometricObject(){
@@ -33,6 +33,10 @@ public class CircleFromSimpleGeometricObject
     }
 
     public double getDiameter(){
+        return 2 * radius ;
+    }
+
+    public double getPerimeter(){
         return 2 * radius * Math.PI;
     }
 
