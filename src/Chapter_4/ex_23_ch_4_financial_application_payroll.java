@@ -9,7 +9,7 @@ public class ex_23_ch_4_financial_application_payroll {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter Employee name : ");
+        System.out.print("Enter Employee_exercise2 name : ");
         String name =input.next();
         System.out.printf("Enter number of hours worked in a week : ");
         int numberHoursWork = input.nextInt();
@@ -26,7 +26,7 @@ public class ex_23_ch_4_financial_application_payroll {
         double totalDeduction = totalFederal + totalState;
         double netPay = grossPay - totalDeduction;
 
-        System.out.println("Employee name : "+name);
+        System.out.println("Employee_exercise2 name : "+name);
         System.out.println("Hours work : "+numberHoursWork);
         System.out.println("Pay Rate : $"+payRate);
         System.out.println("Gross pay : %.1f$"+grossPay);

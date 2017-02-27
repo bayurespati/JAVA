@@ -70,7 +70,7 @@ public class ex_4_ch_8_compute_the_weekly_hours_for_each_employee {
 
     public static void printEmployeeHour(int[][] totalHourEachEmployee){
         for(int i = 0 ; i < totalHourEachEmployee.length; i++){
-            System.out.println("Employee : "+totalHourEachEmployee[i][0]+" Total Hour :"+totalHourEachEmployee[i][1]);
+            System.out.println("Employee_exercise2 : "+totalHourEachEmployee[i][0]+" Total Hour :"+totalHourEachEmployee[i][1]);
         }
     }
 }
