@@ -1,14 +1,12 @@
 package Chapter_11;
 
-import Chapter_11.library_class_chapter_11.SavingAccount;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Created by bnamora on 2/27/17.
  */
-public class ex_4_ch_11_maximum_element_in_arrayList {
+public class ex_7_ch_11_shuffle_arrayList {
     public static void main(String[] args) {
         ArrayList<Integer> list =  new ArrayList<>();
         Scanner input = new Scanner(System.in);
@@ -19,10 +17,12 @@ public class ex_4_ch_11_maximum_element_in_arrayList {
             if(value != 0)
                 list.add(value);
         }while (value != 0);
-        System.out.println("Max number is "+max(list));
+
+        shuffle(list);
+        System.out.println("After shuffle number  "+list);
     }
 
-    public static Integer max (ArrayList<Integer> list){
-        return (list.size() == 0) ? null : java.util.Collections.max(list);
+    public static void shuffle(ArrayList<Integer> list){
+        java.util.Collections.shuffle(list);
     }
 }
