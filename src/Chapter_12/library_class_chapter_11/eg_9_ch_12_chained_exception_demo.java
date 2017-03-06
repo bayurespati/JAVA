@@ -18,7 +18,7 @@ public class eg_9_ch_12_chained_exception_demo {
             method2();
         }
         catch (Exception ex){
-            throw new Exception("New info from methods1");
+            throw new Exception("New info from methods1", ex);
         }
     }
 
